@@ -1,19 +1,21 @@
 # This YAML configuration specifies a server with two volumes and two users
 server:
   instance_type: t2.micro
-  ami_type: amzn2
+  ami_type: ami-0cf6f5c8a62fa5da6
   architecture: x86_64
   root_device_type: ebs
   virtualization_type: hvm
   min_count: 1
   max_count: 1
+  subnet: subnet-009fa557fc8d836d3
+  security_group: sg-02e651643beaaf4e7
   volumes:
     - device: /dev/xvda
       size_gb: 10
       type: ext4
       mount: /
     - device: /dev/xvdf
-      size_gb: 100
+      size_gb: 14
       type: xfs
       mount: /data
   users:
