@@ -1,4 +1,4 @@
-/ec2-keypair.pem
+/ec2-keypair2.pem
 /venv/
 /aws-creds
-/ec2-keypair.pem.bakbak
+/ec2-keypair.pem

@@ -1,7 +1,10 @@
 import boto3
 import yaml
+import paramiko
 
 volumes = []
+ssh = paramiko.SSHClient()
+ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
 # Set the resource object
 ec2 = boto3.resource('ec2')
@@ -29,14 +32,29 @@ try:
         InstanceType=config['server']['instance_type'],
         KeyName='ec2-keypair',
         BlockDeviceMappings=volumes,
-        SubnetId=config['server']['security_group'],
+        SubnetId=config['server']['network']['subnet'],
         # PrivateIpAddress='10.255.6.16',
-        SecurityGroupIds=config['server']['subnet'],
-        DryRun=True
+        SecurityGroupIds=config['server']['network']['security_groups'],
+        UserData='userdata.sh'
+        #DryRun=True
     )
     iid = instance[0].id
     print(f'Instance {iid} successfully created.')
-    print(f'IP Address: {instance.private_ip_address}')
+    print(f'IP Address: {instance[0].private_ip_address}')
 except Exception as e:
     print('Failed to create instance:\n' + str(e))
 
+
+# Function to SSH into the EC2 instance
+def ssh_connect(ssh, ip_address):
+    privkey = paramiko.RSAKey.from_private_key_file('ec2-keypair.pem')
+    try:
+        print('SSH into the instance: {}'.format(ip_address))
+        ssh.connect(hostname=ip_address,
+                    username='ec2-user', pkey=privkey)
+        return True
+    except Exception as e:
+        print(str(e))
+
+
+#ssh_connect(ssh, instance[0].private_ip_address)
