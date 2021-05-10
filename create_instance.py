@@ -5,6 +5,8 @@ import paramiko
 volumes = []
 ssh = paramiko.SSHClient()
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+with open('userdata.sh', 'r') as userdata_file:
+    userdata = userdata_file.read()
 
 # Set the resource object
 ec2 = boto3.resource('ec2')
@@ -33,9 +35,9 @@ try:
         KeyName='ec2-keypair',
         BlockDeviceMappings=volumes,
         SubnetId=config['server']['network']['subnet'],
-        # PrivateIpAddress='10.255.6.16',
+        PrivateIpAddress='10.255.6.194',
         SecurityGroupIds=config['server']['network']['security_groups'],
-        UserData='userdata.sh'
+        UserData=userdata
         #DryRun=True
     )
     iid = instance[0].id
