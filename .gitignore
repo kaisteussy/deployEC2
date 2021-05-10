@@ -1,5 +1,7 @@
-/ec2-keypair.pem
+/ec2-keypair2.pem
 /venv/
 /aws-creds
 /ec2-keypair.pem.bak
 /cloud_config_dev
+/ec2-keypair2.pem
+/public_key.txt

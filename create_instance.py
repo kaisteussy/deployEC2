@@ -35,7 +35,7 @@ try:
         KeyName=config['server']['key_pair'],
         BlockDeviceMappings=volumes,
         SubnetId=config['server']['network']['subnet'],
-        PrivateIpAddress=config['server']['network']['ip_address'],
+        PrivateIpAddress=config['server']['network']['private_ip_address'],
         SecurityGroupIds=config['server']['network']['security_groups'],
         UserData=userdata,
         #DryRun=True

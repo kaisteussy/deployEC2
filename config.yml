@@ -4,9 +4,9 @@ server:
   ami_type: ami-0cf6f5c8a62fa5da6
   min_count: 1
   max_count: 1
-  key_pair: ec2-keypair
+  key_pair: ec2-keypair2
   network:
-    private_ip_address: 10.255.6.194
+    private_ip_address: 10.255.6.195
     subnet: subnet-009fa557fc8d836d3
     security_groups:
       - sg-08f26d1dcf8f63011
