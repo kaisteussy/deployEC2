@@ -2,13 +2,14 @@ import boto3
 import yaml
 
 volumes = []
+userdata_file = 'cloud_config_dev'
 
 # Set the resource object to EC2
 ec2 = boto3.resource('ec2')
 
 # Open and store UserData bash script
-with open('userdata.sh', 'r') as userdata_file:
-    userdata = userdata_file.read()
+with open(userdata_file, 'r') as file:
+    userdata = file.read()
 
 # Open the configuration file and store its contents
 with open('config.yml', 'r') as config_file:
