@@ -1,8 +1,12 @@
 # deployEC2
 Deploy an AWS Linux EC2 instance.
 
-Be sure to configure aws cli authentication before by entering the following into the terminal:
+Before using the following script, be sure to configure aws cli authentication. 
+
+Enter the following into the terminal:
 aws configure
+
+https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html#cli-configure-quickstart-config
 
 INSTRUCTIONS:
 _______________________________________________________________________________________
