@@ -1,8 +1,15 @@
 # deployEC2
-Deploy an AWS EC2 instance.
+Deploy an AWS Linux EC2 instance.
 
-Instructions:
-Edit the config.yml file to fit your needs. You will likely need to edit the following:
+INSTRUCTIONS:
+_______________________________________________________________________________________
+Edit the config.yml file to fit your needs. You will likely need to edit the following values:
 
-key_pair\n
+key_pair,
 network
+
+IMPORTANT:
+You will also need to insert the SSH-RSA public keys into the corresponding fields in the cloud-config file where you see the following:
+<INSERT_YOUR_PUBLIC_KEY>
+
+This ideally will be handled in config.yml in the future to prevent having to edit multiple files.
