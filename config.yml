@@ -6,10 +6,10 @@ server:
   max_count: 1
   key_pair: ec2-keypair2
   network:
-    private_ip_address: 10.255.6.195
-    subnet: subnet-009fa557fc8d836d3
+    private_ip_address: <ADDRESS>
+    subnet: <SUBNET>
     security_groups:
-      - sg-08f26d1dcf8f63011
+      - <SECURITY_GROUP>
   volumes:
     - device: /dev/xvda
       size_gb: 10
