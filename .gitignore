@@ -5,3 +5,4 @@
 /cloud_config_dev
 /ec2-keypair2.pem
 /public_key.txt
+/userdata.sh
