@@ -1,6 +1,9 @@
 # deployEC2
 Deploy an AWS Linux EC2 instance.
 
+Be sure to configure aws cli authentication before by entering the following into the terminal:
+aws configure
+
 INSTRUCTIONS:
 _______________________________________________________________________________________
 Edit the config.yml file to fit your needs. You will likely need to edit the following values:
