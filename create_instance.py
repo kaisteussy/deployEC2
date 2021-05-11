@@ -2,7 +2,7 @@ import boto3
 import yaml
 
 volumes = []
-userdata_file = 'cloud_config_dev'
+userdata_file = 'cloud_config'
 
 # Set the resource object to EC2
 ec2 = boto3.resource('ec2')
