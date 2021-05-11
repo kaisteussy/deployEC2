@@ -5,10 +5,10 @@ users:
     sudo: [ "ALL=(ALL) NOPASSWD:ALL" ]
     shell: /bin/bash
     ssh-authorized-keys:
-    - ssh-rsa <YOUR_PUBLIC_KEY>
+    - ssh-rsa <INSERT_YOUR_PUBLIC_KEY>
   - name: user2
     groups: [ wheel ]
     sudo: [ "ALL=(ALL) NOPASSWD:ALL" ]
     shell: /bin/bash
     ssh-authorized-keys:
-    - ssh-rsa <YOUR_PUBLIC_KEY>
+    - ssh-rsa <INSERT_YOUR_PUBLIC_KEY>
